@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+    <title>A-6 Podcast Finder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>A-6: Podcast Finder</h1>
+      <p>Created by Sam Rosati</p>
+    </header>
+
+    <main>
+      <!-- Find a Podcast (Get Form) -->
+
+      <form action="https://www.listennotes.com/search" method="get">
+        <h2>Find a Podcast</h2>
+        <!-- action attribute: location of the server-side script -->
+        <label for="keyword">Keyword: </label>
+        <input type="string" id="keyword" name="q" required />
+
+        <label for="type">Type: </label>
+        <select type="string" name="type" id="type">
+          <option value="" disabled selected>Select Type</option>
+          <option value="episode">episode</option>
+          <option value="podcast">podcast</option>
+          <option value="curated">curated</option>
+        </select>
+
+        <label for="min">Minimum Length (min): </label>
+        <input type="integer" id="minLength" name="len_min" min="0" />
+
+        <label for="max">Maximum Length (max): </label>
+        <input type="integer" id="max" name="len_max" min="0" />
+
+        <label for="language">Language: </label>
+        <input type="string" id="language" name="language" />
+
+        <fieldset class="sortByDate">
+          <legend>Sort by date?</legend>
+
+          <label>
+            Yes
+            <input type="radio" name="sort_by_date" value="1" />
+            No
+            <input type="radio" name="sort_by_date" value="0" />
+          </label>
+        </fieldset>
+
+        <!-- name attribute is used in the server-side script to access data -->
+        <div class="buttons">
+          <input type="submit" value="Search" id="search" />
+          <input type="reset" value="Clear" id="clear" />
+        </div>
+      </form>
+
+      <!-- Contact US (Post Form) -->
+
+      <form action="#" method="post" id="contactForm">
+        <h2>Contact Us</h2>
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" placeholder="first name" required />
+
+        <!-- another way of adding label to an input field -->
+        <label>Last Name: </label>
+        <input type="text" placeholder="Lastname" required />
+
+        <label for="email">Email: </label>
+        <input type="email" id="email" />
+
+        <label for="age">Age: </label>
+        <select name="age" id="age">
+          <option value="" disabled selected>Select your age</option>
+          <option value="0-20">Under 20</option>
+          <option value="20-29">20-29</option>
+          <option value="30-39">30-39</option>
+          <option value="40-49">40-49</option>
+          <option value="50-59">50-59</option>
+          <option value="60-69">60-69</option>
+          <option value="70-79">70-79</option>
+          <option value="80+">80 and up</option>
+        </select>
+
+        <fieldset>
+          <legend>Categories you are interested in:</legend>
+
+          <label>
+            True Crime
+            <input type="checkbox" name="Categories" value="true crime" />
+            News
+            <input type="checkbox" name="Categories" value="news" />
+            Comedy
+            <input type="checkbox" name="Categories" value="comedy" />
+            IT
+            <input type="checkbox" name="Categories" value="it" />
+          </label>
+        </fieldset>
+
+        <label>Your feedback to our service: </label>
+        <textarea name="" id="" cols="10" rows="10"></textarea>
+        <div class="buttons">
+          <input type="submit" value="Send" id="search" />
+          <input type="reset" value="Clear" id="clear" />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
